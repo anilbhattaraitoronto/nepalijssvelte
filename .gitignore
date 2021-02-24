@@ -1,0 +1,4 @@
+/client/node_modules/
+/client/public/build/
+deploy.sh
+.DS_Store
