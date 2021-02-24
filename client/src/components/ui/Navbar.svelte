@@ -4,7 +4,7 @@
     </h1>
     <nav>
         <div class="drop-down-nav">
-            <span class="link">Lessons</span>
+            <span class="link">Lessons ▾</span>
             <ul>
                 <li>
                     <a href="#/lessons/letters" class="main-link">Letters</a>
@@ -20,7 +20,7 @@
             </ul>
         </div>
         <div class="drop-down-nav">
-            <span class="link">Account</span>
+            <span class="link">Account ▾</span>
             <ul>
                 <li>
                     <a href="#/account/login" class="main-link">Login</a>
@@ -52,7 +52,7 @@
         justify-content: space-between;
         align-items: center;
         width: 100%;
-        max-width: 1000px;
+        max-width: 1100px;
         margin: auto;
     }
     nav {
@@ -71,7 +71,7 @@
         top: 16px;
         left: 0;
         right: 0;
-        /* width: 100%; */
+
         margin: auto;
         transform: scale(0);
         transition: 200ms all ease-in-out;
@@ -88,22 +88,17 @@
     li {
         list-style: none;
         text-align: center;
-        padding-top: 16px;
+        padding: 16px 0;
     }
     .link {
-        display: inline-block;
+        display: block;
         color: darkgreen;
-        border-right: 1px solid rgb(211, 209, 209);
-        padding: 0 4px;
-        border-top-right-radius: 4px;
         cursor: pointer;
         width: 100px;
     }
-    .link:hover {
-        text-decoration: underline;
-    }
+
     li > a {
-        color: rgb(8, 43, 8);
+        color: rgb(13, 57, 13);
     }
     h1::after {
         content: "learn nepali";
@@ -115,12 +110,14 @@
         margin-top: -8px;
         word-spacing: 6px;
         letter-spacing: 2px;
+        color: red;
     }
     h1 > a {
         transition: 250ms all ease-in-out;
+        color: darkgreen;
     }
     h1 > a:hover {
         text-decoration: none;
-        color: darkblue;
+        color: green;
     }
 </style>

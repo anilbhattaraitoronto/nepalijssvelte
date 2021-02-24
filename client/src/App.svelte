@@ -11,6 +11,9 @@
     import Profile from "./components/auth/Profile.svelte";
     import ResetPw from "./components/auth/ResetPW.svelte";
     import ForgotPw from "./components/auth/ForgotPW.svelte";
+    import Footer from "./components/ui/Footer.svelte";
+    import Privacy from "./components/pages/staticPages/Privacy.svelte";
+    import Toc from "./components/pages/staticPages/TOC.svelte";
 
     const routes = {
         "/": Home,
@@ -23,27 +26,36 @@
         "/account/profile": Profile,
         "/account/resetpassword": ResetPw,
         "/account/forgotpassword": ForgotPw,
+        "/staticpages/privacy": Privacy,
+        "/staticpages/toc": Toc,
     };
 </script>
 
 <header>
     <Navbar />
 </header>
-
-<main>
-    <Router {routes} />
+<main class="app-wrapper">
+    <main class="main-content">
+        <Router {routes} />
+    </main>
+    <footer>
+        <Footer />
+    </footer>
 </main>
 
 <style>
-    main {
-        text-align: center;
-        padding: 1em;
+    .app-wrapper {
+        max-width: 1100px;
         margin: 0 auto;
+        position: relative;
+    }
+    .main-content {
+        min-height: 90vh;
     }
     header {
         width: 100%;
         margin: auto;
-        box-shadow: 0 1px 0 gray;
+        box-shadow: 0 1px 0 rgb(205, 199, 199);
         padding: 0 8px;
     }
 </style>
