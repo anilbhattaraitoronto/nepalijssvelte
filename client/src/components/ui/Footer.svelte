@@ -17,7 +17,9 @@
         justify-content: space-around;
         align-items: center;
         flex-wrap: wrap;
-        padding: 16px 0;
+        padding: 8px 0;
+        position: sticky;
+        bottom: 0;
     }
     p {
         text-align: center;

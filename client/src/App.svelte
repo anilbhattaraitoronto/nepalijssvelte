@@ -35,37 +35,51 @@
     };
 </script>
 
-<header>
-    <Navbar />
-</header>
-<main class="app-wrapper">
+<div class="app-wrapper">
+    <header>
+        <Navbar />
+    </header>
     <main class="main-content">
-        <Router {routes} />
+        <main class="pages">
+            <Router {routes} />
+        </main>
     </main>
-</main>
-<footer class="main-footer">
-    <Footer />
-</footer>
+    <footer class="main-footer">
+        <Footer />
+    </footer>
+</div>
 
 <style>
     .app-wrapper {
+        position: relative;
+        min-height: 100vh;
+    }
+    .main-content {
+        max-height: 87vh;
         max-width: 1100px;
         margin: 0 auto;
         position: relative;
+        overflow: auto;
     }
-    .main-content {
-        min-height: 90vh;
+    .pages {
+        padding: 32px 16px;
     }
     header {
         width: 100%;
         margin: auto;
         box-shadow: 0 1px 0 rgb(205, 199, 199);
         padding: 0 8px;
+        position: sticky;
+        top: 0;
+        z-index: 102;
+        background: white;
     }
     .main-footer {
         width: 100%;
         margin: auto;
         background: darkgreen;
         color: rgb(172, 171, 171);
+        position: absolute;
+        bottom: 0;
     }
 </style>

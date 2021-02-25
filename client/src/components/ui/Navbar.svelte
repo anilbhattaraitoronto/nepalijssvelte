@@ -29,16 +29,16 @@
                     <a href="#/account/register" class="main-link">Register</a>
                 </li>
                 <li>
+                    <a href="#/account/forgotpassword" class="main-link"
+                        >Forgot PW</a
+                    >
+                </li>
+                <li>
                     <a href="#/account/profile" class="main-link">Profile</a>
                 </li>
                 <li>
                     <a href="#/account/resetpassword" class="main-link"
                         >Reset PW</a
-                    >
-                </li>
-                <li>
-                    <a href="#/account/forgotpassword" class="main-link"
-                        >Forgot PW</a
                     >
                 </li>
             </ul>
@@ -54,6 +54,8 @@
         width: 100%;
         max-width: 1100px;
         margin: auto;
+
+        z-index: 100;
     }
     nav {
         display: flex;
@@ -63,6 +65,7 @@
         position: relative;
         width: 100px;
         text-align: center;
+        z-index: 30;
     }
     .drop-down-nav > ul {
         display: flex;
