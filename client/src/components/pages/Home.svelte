@@ -66,3 +66,9 @@
     recusandae laboriosam nisi sit pariatur beatae in quam officia vero iure est
     vel! Facilis, animi consequuntur!
 </p>
+
+<style>
+    p {
+        padding-bottom: 60px;
+    }
+</style>
