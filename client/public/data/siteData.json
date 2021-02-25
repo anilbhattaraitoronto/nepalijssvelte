@@ -1,0 +1,11 @@
+{
+    "title":"Learn Nepali",
+    "vowels":[
+        {
+            "nepali":"अ",
+            "english":"a",
+            "sounds":"/data/sounds/vowels/mp3/a.mp3",
+            "images":"Image"
+        }
+    ]
+}

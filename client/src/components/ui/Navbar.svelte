@@ -78,7 +78,7 @@
         margin: auto;
         transform: scale(0);
         transition: 200ms all ease-in-out;
-        background: white;
+        background: darkgreen;
         z-index: 20;
         padding: 20px 0;
         box-shadow: 0 1px 0 lightgray;
@@ -95,13 +95,13 @@
     }
     .link {
         display: block;
-        color: darkgreen;
+        color: white;
         cursor: pointer;
         width: 100px;
     }
 
     li > a {
-        color: rgb(13, 57, 13);
+        color: rgb(231, 236, 231);
     }
     h1::after {
         content: "learn nepali";
@@ -113,14 +113,14 @@
         margin-top: -8px;
         word-spacing: 6px;
         letter-spacing: 2px;
-        color: red;
+        color: rgb(219, 213, 213);
     }
     h1 > a {
         transition: 250ms all ease-in-out;
-        color: darkgreen;
+        color: white;
     }
     h1 > a:hover {
         text-decoration: none;
-        color: green;
+        color: rgb(169, 174, 169);
     }
 </style>

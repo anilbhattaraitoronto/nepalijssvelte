@@ -1,4 +1,5 @@
 <script>
+    import { onMount } from "svelte";
     import Router from "svelte-spa-router";
     import Navbar from "./components/ui/Navbar.svelte";
     import Home from "./components/pages/Home.svelte";
@@ -16,6 +17,28 @@
     import Toc from "./components/pages/staticPages/TOC.svelte";
     import About from "./components/pages/staticPages/About.svelte";
     import Contact from "./components/pages/staticPages/Contact.svelte";
+
+    //import stores
+
+    import { siteData } from "./stores/siteData.js";
+
+    onMount(function () {
+        Promise.all([
+            fetch("/data/siteData.json")
+                .then((res) => {
+                    if (res.ok) {
+                        return res.json();
+                    } else {
+                        return;
+                    }
+                })
+                .then((data) => {
+                    console.log(data);
+                    $siteData = data;
+                    console.log("site data", $siteData);
+                }),
+        ]).catch((err) => console.log("error is", err));
+    });
 
     const routes = {
         "/": Home,
@@ -53,13 +76,15 @@
     .app-wrapper {
         position: relative;
         min-height: 100vh;
+        background: darkgreen;
     }
     .main-content {
         max-height: 87vh;
         max-width: 1100px;
-        margin: 0 auto;
+        margin: -8px auto;
         position: relative;
         overflow: auto;
+        background: white;
     }
     .pages {
         padding: 32px 16px;
@@ -67,12 +92,12 @@
     header {
         width: 100%;
         margin: auto;
-        box-shadow: 0 1px 0 rgb(205, 199, 199);
+        box-shadow: 0 1px 0 rgb(69, 123, 75);
         padding: 0 8px;
         position: sticky;
         top: 0;
         z-index: 102;
-        background: white;
+        background: darkgreen;
     }
     .main-footer {
         width: 100%;
