@@ -65,6 +65,7 @@
     .main-footer {
         width: 100%;
         margin: auto;
-        background: lightgray;
+        background: darkgreen;
+        color: rgb(172, 171, 171);
     }
 </style>

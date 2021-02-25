@@ -12,9 +12,9 @@
     footer {
         max-width: 1100px;
         margin: auto;
-        font-size: 95%;
+        font-size: 13px;
         display: flex;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
         flex-wrap: wrap;
         padding: 16px 0;
@@ -24,14 +24,16 @@
     }
     footer > nav {
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
-        margin: 16px auto;
+        margin: 16px 0;
+        text-align: left;
     }
     footer > nav > a {
         display: inline-block;
         border-right: 1px solid gray;
         border-top-right-radius: 8px;
         padding: 0 8px;
+        color: rgb(172, 171, 171);
     }
 </style>
