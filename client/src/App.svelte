@@ -14,9 +14,13 @@
     import Footer from "./components/ui/Footer.svelte";
     import Privacy from "./components/pages/staticPages/Privacy.svelte";
     import Toc from "./components/pages/staticPages/TOC.svelte";
+    import About from "./components/pages/staticPages/About.svelte";
+    import Contact from "./components/pages/staticPages/Contact.svelte";
 
     const routes = {
         "/": Home,
+        "/about": About,
+        "/contact": Contact,
         "/lessons/letters": Letters,
         "/lessons/words": Words,
         "/lessons/sentences": Sentences,
@@ -38,10 +42,10 @@
     <main class="main-content">
         <Router {routes} />
     </main>
-    <footer>
-        <Footer />
-    </footer>
 </main>
+<footer class="main-footer">
+    <Footer />
+</footer>
 
 <style>
     .app-wrapper {
@@ -57,5 +61,10 @@
         margin: auto;
         box-shadow: 0 1px 0 rgb(205, 199, 199);
         padding: 0 8px;
+    }
+    .main-footer {
+        width: 100%;
+        margin: auto;
+        background: lightgray;
     }
 </style>
