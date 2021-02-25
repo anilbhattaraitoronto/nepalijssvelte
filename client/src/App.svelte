@@ -78,7 +78,7 @@
         width: 100%;
         margin: auto;
         background: darkgreen;
-        color: rgb(172, 171, 171);
+        color: rgb(245, 241, 241);
         position: absolute;
         bottom: 0;
     }

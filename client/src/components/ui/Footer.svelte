@@ -36,6 +36,6 @@
         border-right: 1px solid gray;
         border-top-right-radius: 8px;
         padding: 0 8px;
-        color: rgb(172, 171, 171);
+        color: rgb(247, 241, 241);
     }
 </style>
