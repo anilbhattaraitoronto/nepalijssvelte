@@ -3,6 +3,7 @@
         <a href="#/">LN 🏡</a>
     </h1>
     <nav>
+        <a href="#/blogs" class="link" id="blog-link">Blogs</a>
         <div class="drop-down-nav">
             <span class="link">Lessons ▾</span>
             <ul>
@@ -54,7 +55,7 @@
         width: 100%;
         max-width: 1100px;
         margin: auto;
-
+        padding: 10px 0;
         z-index: 100;
     }
     nav {
@@ -95,29 +96,36 @@
     }
     .link {
         display: block;
-        color: white;
+        color: rgb(255, 255, 138);
         cursor: pointer;
-        width: 100px;
+        max-width: 100px;
+        text-transform: uppercase;
+        font-size: 13px;
+        letter-spacing: 1px;
+    }
+    #blog-link {
+        padding-right: 12px;
     }
 
     li > a {
         color: rgb(231, 236, 231);
     }
+
     h1::after {
         content: "learn nepali";
         display: block;
         font-size: 0.4em;
-        text-align: center;
+
         font-weight: 100;
         font-style: italic;
-        margin-top: -8px;
+        margin-top: -4px;
         word-spacing: 6px;
-        letter-spacing: 2px;
+        letter-spacing: 1px;
         color: rgb(219, 213, 213);
     }
     h1 > a {
         transition: 250ms all ease-in-out;
-        color: white;
+        color: rgb(255, 255, 138);
     }
     h1 > a:hover {
         text-decoration: none;

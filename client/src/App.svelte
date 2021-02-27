@@ -21,10 +21,11 @@
     //import stores
 
     import { siteData } from "./stores/siteData.js";
+    import Blogs from "./components/pages/Blogs.svelte";
 
     onMount(function () {
         Promise.all([
-            fetch("/data/siteData.json")
+            fetch("https://nepalreviewed.com/posts/api/posts")
                 .then((res) => {
                     if (res.ok) {
                         return res.json();
@@ -42,6 +43,7 @@
 
     const routes = {
         "/": Home,
+        "/blogs": Blogs,
         "/about": About,
         "/contact": Contact,
         "/lessons/letters": Letters,
@@ -62,6 +64,10 @@
     <header>
         <Navbar />
     </header>
+    <nav class="sticky-sidebar">
+        <a href="#/">🏠</a>
+        <a href="#/blogs">📖</a>
+    </nav>
     <main class="main-content">
         <main class="pages">
             <Router {routes} />
@@ -79,32 +85,61 @@
         background: darkgreen;
     }
     .main-content {
-        max-height: 87vh;
+        min-height: 80vh;
         max-width: 1100px;
-        margin: -8px auto;
+        margin: auto;
         position: relative;
-        overflow: auto;
         background: white;
     }
     .pages {
         padding: 32px 16px;
+
+        min-height: 80vh;
+        overflow: auto;
     }
     header {
         width: 100%;
         margin: auto;
-        box-shadow: 0 1px 0 rgb(69, 123, 75);
         padding: 0 8px;
         position: sticky;
         top: 0;
         z-index: 102;
         background: darkgreen;
     }
+    .sticky-sidebar {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        background: rgba(134, 138, 134, 0.338);
+        min-height: 200px;
+        width: 60px;
+        padding: 0 3px;
+        border-top-left-radius: 16px;
+        border-bottom-left-radius: 16px;
+        transition: 250ms all ease-in-out;
+        transform: scale(0);
+        border: 1px solid rgb(109, 109, 104);
+    }
+    .sticky-sidebar > a {
+        text-transform: uppercase;
+        z-index: 150;
+        color: rgb(244, 209, 17);
+    }
     .main-footer {
         width: 100%;
-        margin: auto;
+        margin: 4px auto 0;
         background: darkgreen;
         color: rgb(245, 241, 241);
-        position: absolute;
-        bottom: 0;
+
+        box-shadow: 0 -1px 0 rgb(5, 79, 5);
+    }
+    @media (min-width: 1220px) {
+        .sticky-sidebar {
+            transform: scale(1) translateY(-50%);
+        }
     }
 </style>
