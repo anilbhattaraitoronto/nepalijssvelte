@@ -1,0 +1,20 @@
+{
+    "name":"Learn Nepali",
+    "short_name":"LN",
+    "start_url":".",
+    "background_color":"#009900",
+    "theme_color":"#009900",
+    "display":"standalone",
+    "icons":[
+        {
+            "src":"/images/icons/np_flag.png",
+            "sizes":"512x512",
+            "type":"image/png"
+        },
+        {
+            "src":"/images/icons/np_flag192.png",
+            "sizes":"192x192",
+            "type":"image/png"
+        }
+    ]
+}
