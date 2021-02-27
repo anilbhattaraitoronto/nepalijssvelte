@@ -21,7 +21,8 @@
     //import stores
 
     import { siteData } from "./stores/siteData.js";
-    import Blogs from "./components/pages/Blogs.svelte";
+    import Blogs from "./components/pages/blogs/Blogs.svelte";
+    import AddBlog from "./components/pages/blogs/AddBlog.svelte";
 
     onMount(function () {
         Promise.all([
@@ -53,6 +54,7 @@
         "/account/login": Login,
         "/account/register": Register,
         "/account/profile": Profile,
+        "/account/addblog": AddBlog,
         "/account/resetpassword": ResetPw,
         "/account/forgotpassword": ForgotPw,
         "/staticpages/privacy": Privacy,

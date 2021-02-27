@@ -37,10 +37,14 @@
                 <li>
                     <a href="#/account/profile" class="main-link">Profile</a>
                 </li>
+
                 <li>
                     <a href="#/account/resetpassword" class="main-link"
                         >Reset PW</a
                     >
+                </li>
+                <li>
+                    <a href="#/account/addblog" class="main-link">Add Blog</a>
                 </li>
             </ul>
         </div>
@@ -84,7 +88,7 @@
         padding: 20px 0;
         box-shadow: 0 1px 0 lightgray;
         overflow: auto;
-        max-height: 300px;
+        min-height: 200px;
     }
     .drop-down-nav:hover > ul {
         transform: scale(1);
@@ -92,7 +96,7 @@
     li {
         list-style: none;
         text-align: center;
-        padding: 16px 0;
+        padding: 12px 0;
     }
     .link {
         display: block;
@@ -109,6 +113,8 @@
 
     li > a {
         color: rgb(231, 236, 231);
+        font-size: 15px;
+        letter-spacing: 1px;
     }
 
     h1::after {
@@ -129,6 +135,6 @@
     }
     h1 > a:hover {
         text-decoration: none;
-        color: rgb(169, 174, 169);
+        color: white;
     }
 </style>
