@@ -12,7 +12,7 @@ const assetsToCache = [
     '/pages/fallback.html'
 ]
 
-//function to limit item numbers in the caches 
+//function to limit item numbers in the cache
 
 function limitCacheSize(name, size) {
     caches.open(name).then(cache => {
@@ -37,7 +37,7 @@ self.addEventListener("activate", event => {
     // console.log('Activated sw')
     event.waitUntil(
         caches.keys().then(keys => {
-            console.log("cache keys are", keys)
+            
             return Promise.all(keys
                 .filter(key => key !== staticCacheName && key !== dynamicCacheName)
                 .map(key =>caches.delete(key))
@@ -54,11 +54,11 @@ self.addEventListener("fetch", (event) => {
             return cacheRes || fetch(event.request).then(fetchRes => {
                 return caches.open(dynamicCacheName).then(cache => {
                     cache.put(event.request.url, fetchRes.clone());
-                    limitCacheSize(staticCacheName, 10);
+                    limitCacheSize(dynamicCacheName, 4);
                     return fetchRes;
                 })
             }).catch(() => {
-                if (event.requesst.url.indexOf('.html') > -1) {
+                if (event.request.url.indexOf('.html') > -1) {
                     return caches.match('/pages/fallback.html')
                 }
                 
