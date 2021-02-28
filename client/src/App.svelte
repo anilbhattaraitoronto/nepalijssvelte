@@ -36,6 +36,7 @@
                 })
                 .then((data) => {
                     $posts = data;
+                    console.log($posts);
                 }),
         ]).catch((err) => console.log("error is", err));
     });
@@ -65,8 +66,8 @@
         <Navbar />
     </header>
     <nav class="sticky-sidebar">
-        <a href="#/">🏠</a>
-        <a href="#/blogs">📖</a>
+        <a href="#/" title="Home">🏠</a>
+        <a href="#/blogs" title="Blogs">📖</a>
     </nav>
     <main class="main-content">
         <main class="pages">
@@ -111,9 +112,9 @@
         flex-direction: column;
         justify-content: space-evenly;
         align-items: center;
-        position: absolute;
+        position: fixed;
         right: 0;
-        top: 50%;
+        top: 222px;
         background: rgba(134, 138, 134, 0.338);
         min-height: 200px;
         width: 60px;
@@ -127,15 +128,18 @@
     .sticky-sidebar > a {
         text-transform: uppercase;
         z-index: 150;
-        color: rgb(244, 209, 17);
+        padding: 2px;
+        border: 1px solid rgb(7, 145, 23);
+        border-radius: 8px;
+    }
+    .sticky-sidebar > a:hover {
+        border-color: rgb(244, 209, 17);
     }
     .main-footer {
         width: 100%;
         margin: 4px auto 0;
         background: darkgreen;
         color: rgb(245, 241, 241);
-
-        box-shadow: 0 -1px 0 rgb(5, 79, 5);
     }
     @media (min-width: 1220px) {
         .sticky-sidebar {
