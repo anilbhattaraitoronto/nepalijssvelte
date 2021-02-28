@@ -65,11 +65,12 @@
     <header>
         <Navbar />
     </header>
-    <nav class="sticky-sidebar">
-        <a href="#/" title="Home">🏠</a>
-        <a href="#/blogs" title="Blogs">📖</a>
-    </nav>
+
     <main class="main-content">
+        <nav class="sticky-sidebar">
+            <a href="#/" title="Home">🏠</a>
+            <a href="#/blogs" title="Blogs">📖</a>
+        </nav>
         <main class="pages">
             <Router {routes} />
         </main>
@@ -112,10 +113,10 @@
         flex-direction: column;
         justify-content: space-evenly;
         align-items: center;
-        position: fixed;
+        position: absolute;
         right: 0;
-        top: 222px;
-        background: rgba(134, 138, 134, 0.338);
+        top: 190px;
+        background: rgba(241, 244, 241, 0.81);
         min-height: 200px;
         width: 60px;
         padding: 0 3px;
@@ -123,17 +124,20 @@
         border-bottom-left-radius: 16px;
         transition: 250ms all ease-in-out;
         transform: scale(0);
-        border: 1px solid rgb(109, 109, 104);
+        border: 1px solid rgb(231, 233, 228);
     }
     .sticky-sidebar > a {
         text-transform: uppercase;
         z-index: 150;
         padding: 2px;
-        border: 1px solid rgb(7, 145, 23);
         border-radius: 8px;
+        background: white;
+        font-size: 16px;
+        transition: 200ms all ease-in-out;
     }
     .sticky-sidebar > a:hover {
-        border-color: rgb(244, 209, 17);
+        transform: scale(1.1);
+        text-decoration: none;
     }
     .main-footer {
         width: 100%;
@@ -141,7 +145,7 @@
         background: darkgreen;
         color: rgb(245, 241, 241);
     }
-    @media (min-width: 1220px) {
+    @media (min-width: 1000px) {
         .sticky-sidebar {
             transform: scale(1) translateY(-50%);
         }
