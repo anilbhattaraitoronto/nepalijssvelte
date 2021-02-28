@@ -16,9 +16,9 @@ const assetsToCache = [
 
 function limitCacheSize(name, size) {
     caches.open(name).then(cache => {
-        cache.keys().then(keys => {
-            if (keys.length > size) {
-                cache.delete(keys[0]).then(limitCacheSize(name, size))
+        cache.keys().then(key => {
+            if (key.length > size) {
+                cache.delete(key[0]).then(limitCacheSize(name, size))
             }
         })
     })
@@ -47,22 +47,42 @@ self.addEventListener("activate", event => {
     
 })
 
-self.addEventListener("fetch", (event) => {
-    // console.log("fetch event", event)
-    event.respondWith(
-        caches.match(event.request).then(cacheRes => {
-            return cacheRes || fetch(event.request).then(fetchRes => {
-                return caches.open(dynamicCacheName).then(cache => {
-                    cache.put(event.request.url, fetchRes.clone());
-                    limitCacheSize(dynamicCacheName, 4);
-                    return fetchRes;
-                })
-            }).catch(() => {
-                if (event.request.url.indexOf('.html') > -1) {
-                    return caches.match('/pages/fallback.html')
-                }
+// self.addEventListener("fetch", (event) => {
+//     // console.log("fetch event", event)
+//     event.respondWith(
+//         caches.match(event.request).then(cacheRes => {
+//             return cacheRes || fetch(event.request).then(fetchRes => {
+//                 return caches.open(dynamicCacheName).then(cache => {
+//                     cache.put(event.request.url, fetchRes.clone());
+//                     limitCacheSize(dynamicCacheName, 4);
+//                     return fetchRes;
+//                 })
+//             }).catch(() => {
+//                 if (event.request.url.indexOf('.html') > -1) {
+//                     return caches.match('/pages/fallback.html')
+//                 }
                 
-            })
-        })
-    )
-});
+//             })
+//         })
+//     )
+// });
+
+self.addEventListener('fetch', evt => {
+    //console.log('fetch event', evt);
+    evt.respondWith(
+      caches.match(evt.request).then(cacheRes => {
+        return cacheRes || fetch(evt.request).then(fetchRes => {
+          return caches.open(dynamicCacheName).then(cache => {
+            cache.put(evt.request.url, fetchRes.clone());
+            // check cached items size
+            limitCacheSize(dynamicCacheName, 5);
+            return fetchRes;
+          })
+        });
+      }).catch(() => {
+        if(evt.request.url.indexOf('.html') > -1){
+          return caches.match('/pages/fallback.html');
+        } 
+      })
+    );
+  });
