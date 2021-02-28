@@ -3,7 +3,6 @@ self.addEventListener("install", (event) => {
     event.waitUntil(
         
         caches.open("static").then(cache => {
-            console.log("caching resources for future")
             return cache.addAll([
                 "./", "./global.css", "./build/bundle.css", "./build/bundle.js" 
             ])

@@ -5,6 +5,7 @@
     "background_color":"#009900",
     "theme_color":"#009900",
     "display":"standalone",
+    "orientation":"portrait-primary",
     "icons":[
         {
             "src":"/images/icons/np_flag.png",
