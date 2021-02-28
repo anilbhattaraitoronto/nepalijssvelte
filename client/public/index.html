@@ -14,6 +14,7 @@
     <link rel='stylesheet' href='/build/bundle.css'>
     <link rel="manifest" href="/manifest.json">
     <link rel="apple-touch-icon" href="/images/icons/np_flag.png">
+    <meta name="apple-mobile-web-app-status-bar" content="#009500">
 
     <script defer src='/build/bundle.js'></script>
 </head>
@@ -27,11 +28,9 @@
 <script>
     if('serviceWorker' in navigator){
         navigator.serviceWorker.register('/sw.js').then((registration)=>{
-            console.log("SW Registered")
-            console.log(registration)
+            console.log("SW Registered", registration)
         }).catch((err)=>{
-            console.log("SW Registration failed")
-            console.log("error is: ", err)
+            console.log("SW Registration failed", err)
         });
     }
 </script>

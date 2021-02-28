@@ -20,7 +20,7 @@
 
     //import stores
 
-    import { siteData } from "./stores/siteData.js";
+    import { siteData, posts } from "./stores/siteData.js";
     import Blogs from "./components/pages/blogs/Blogs.svelte";
     import AddBlog from "./components/pages/blogs/AddBlog.svelte";
 
@@ -35,9 +35,7 @@
                     }
                 })
                 .then((data) => {
-                    console.log(data);
-                    $siteData = data;
-                    console.log("site data", $siteData);
+                    $posts = data;
                 }),
         ]).catch((err) => console.log("error is", err));
     });
