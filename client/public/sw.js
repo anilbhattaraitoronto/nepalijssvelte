@@ -80,7 +80,9 @@ self.addEventListener('fetch', evt => {
           })
         });
       }).catch(() => {
-        if(evt.request.url.indexOf('.html') > -1){
+          console.log("Url is",evt.request.url)
+          if (evt.request.url.endsWith('.html')) {
+            console.log(evt.request.url)
           return caches.match('/pages/fallback.html');
         } 
       })
